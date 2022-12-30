@@ -100,24 +100,19 @@ x<sup>(101)<sub>2</sub></sup> = x<sup>(100)<sub>2</sub>+(1)<sub>2</sub></sup> = 
 
 
 Generalizing - 
-- if `y >= 1`
+- if `y >= 0`
     - if `y` is even, <code>x<sup>y</sup> = x<sup>(y/2)*2</sup></code>
     - if `y` is odd, <code>x<sup>y</sup> = x<sup>(y/2)*2</sup>·x</code>
 
-- if `y < 0`
-> **Note**: <code>x<sup>y</sup> = 1/x<sup>|y|</sup></code><br>
-Because the *inverse of multiplication is **division***  
+- if `y < 0`, there are two ways to expand the expression:
+> **Note**: <code>x<sup>y</sup> = 1/x<sup>|y|</sup></code>. The inverse of multiplication is division.
 
 Example:  
-<code>x = 10 = (1010)<sub>2</sub>
+<img src='tex_imgs/exp_neg.png' width="400px">
 
-x<sup>-(1010)<sub>2</sub></sup><br> = 1/x<sup>(1010)<sub>2</sub></sup>
-= 1/x<sup>(101)<sub>2</sub>+(101)<sub>2</sub></sup> = 1/x<sup>(101)<sub>2</sub></sup>·x<sup>(101)<sub>2</sub></sup>  
-
-x<sup>-(101)<sub>2</sub></sup><br>
-= 1/x<sup>(101)<sub>2</sub></sup>
-= 1/x<sup>(100)<sub>2</sub>+(1)<sub>2</sub></sup> = 1/x<sup>(10)<sub>2</sub></sup>·x<sup>(10)<sub>2</sub></sup>·x<sup>(1)<sub>2</sub></sup>
-</code>
-
-- if `y` is even, <code>x<sup>y</sup> = 1/x<sup>(|y|/2)*2</sup></code>
-- if `y` is odd, <code>x<sup>y</sup> = 1/x<sup>(|y|/2)*2</sup>·x</code>
+- In exp (2) and (5), the denominator expands in the same fashion as in the `y >= 0` case.
+- In exp (3) and (6), re-assign the variables based on the alternative form so that
+```
+x = 1/x
+y = -y  # We can always use abs(y) obvi
+```
