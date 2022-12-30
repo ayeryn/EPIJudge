@@ -1,9 +1,10 @@
 # Notes on problem sets
 
-## count_bits.py
+## count_bits.py (4.0)
 - `x & 1`: checks if the last bit is set
 
-## parity.py
+## parity.py (4.1)
+Let `P` be the parity function.
 ### Drop to lowest setting bit   
 ```
 x & ( x - 1)
@@ -18,11 +19,15 @@ Example:
 --------
   1100
 ```
+### Important Property
+- The logic of parity is the same of `XOR`. `XOR` of the same bits results in `0`, meaning
+    - `P(00) = 0` since there are no `1`s
+    - `p(11) = 0` since the number os `1`s is even
 
-### XOR is associative
+- XOR is associative: `a ^ b ^ c = (a ^ b) ^ c = a ^ (b ^ c) = c ^ b ^ a`
+
+Therefore, 
 ```
-Let P be the parity function.
-
 # end is inclusive in the following notation
 P(b[0:63]) = P(b[0:31]) XOR P(b([32:63]))
 ```
