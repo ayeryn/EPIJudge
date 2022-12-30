@@ -15,14 +15,16 @@ def parity_brute(x: int) -> int:
     return p % 2
 
 
-def parity_k(x: int) -> int:
+def parity(x: int) -> int:
     """
     x & (x-1) = x with the lowest **set** bit removed
     O(k) : k is the number of set bits
     """
     p = 0
     while x:
+        # Flips p every time to keep track of odd/evenness
         p ^= 1
+        # Drops to the lowest set bit of x
         x &= x-1
 
     return p
