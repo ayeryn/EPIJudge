@@ -30,3 +30,4 @@ epi_judge_java/java_build/
 EPIJudge.code-workspace
 .vscode/settings.json
 problem_mapping.js
+*.ipynb
