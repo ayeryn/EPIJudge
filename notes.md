@@ -114,5 +114,6 @@ Example:
 - In exp (3) and (6), re-assign the variables based on the alternative form so that
 ```
 x = 1/x
-y = -y  # We can always use abs(y) obvi
+y = -y
+
 ```

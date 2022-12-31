@@ -65,7 +65,24 @@ def power_int(x: float, y: int) -> float:
 
 
 def power(x: float, y: int) -> float:
-    return 0
+    """
+    bitwise arithmetic
+    """
+    ret, p = 1.0, y
+    if y < 0:
+        p, x = -p, 1.0/x
+
+    while p:
+        # if odd, multiplies with the extra x
+        if p & 1:
+            ret *= x
+
+        # new x assignment works as recursion
+        # We do work "on one side" then "duplicate" by
+        # multiplying itself
+        x, p = x * x, p >> 1
+
+    return ret
 
 
 if __name__ == '__main__':
