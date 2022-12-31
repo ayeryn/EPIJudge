@@ -7,8 +7,27 @@ from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
 
 
-def even_odd(A: List[int]) -> None:
-    # TODO - you fill in here.
+def even_odd_unordered(A: List[int]) -> None:
+    """
+    Add odd elements from the end and even elements from
+    then end. This created an unordered list of seperation
+    """
+    s = 0
+    e = len(A)
+    temp = A
+    e -= 1
+
+    for a in temp:
+        if a % 2:
+            # odd -> add from end
+            A[e] = a
+            e -= 1
+        else:
+            A[s] = a
+            s += 1
+
+
+def even_odd_unordered(A: List[int]) -> None:
     return
 
 
