@@ -27,8 +27,16 @@ def even_odd_unordered(A: List[int]) -> None:
             s += 1
 
 
-def even_odd_unordered(A: List[int]) -> None:
-    return
+def even_odd(A) -> None:
+    next_even, next_odd = 0, len(A) - 1
+    while next_even < next_odd:
+        if A[next_even] % 2:
+            # odd
+            A[next_even], A[next_odd] = A[next_odd], A[next_even]
+            next_odd -= 1
+        else:
+            # even
+            next_even += 1
 
 
 @enable_executor_hook
