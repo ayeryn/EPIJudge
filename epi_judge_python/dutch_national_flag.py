@@ -8,9 +8,37 @@ from test_framework.test_utils import enable_executor_hook
 RED, WHITE, BLUE = range(3)
 
 
+def dutch_flag_partition_on(pivot_index: int, A: List[int]) -> None:
+    """
+    Use O(n) space to sort array
+    Note that this doesn't really modify A
+    """
+    s, e, l = [], [], []
+    p = A[pivot_index]
+
+    for i in A:
+        if i < p:
+            s.append(i)
+
+        elif i == p:
+            e.append(i)
+        else:
+            l.append(i)
+
+    A = s + e + l
+
+
 def dutch_flag_partition(pivot_index: int, A: List[int]) -> None:
-    # TODO - you fill in here.
-    return
+    # pivot_index = A.index(A[pivot_index])
+    # p = A[pivot_index]
+
+    # for i in range(len(A)):
+    #     if A[i] < p and i > pivot_index:
+    #         A[i], A[pivot_index] = A[pivot_index], A[i]
+    #         pivot_index = i
+    #     if A[i] > p and i < pivot_index:
+    #         A[i], A[pivot_index] = A[pivot_index], A[i]
+    #         pivot_index = i
 
 
 @enable_executor_hook
