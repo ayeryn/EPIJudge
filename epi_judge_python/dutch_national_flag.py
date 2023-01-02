@@ -28,17 +28,37 @@ def dutch_flag_partition_on(pivot_index: int, A: List[int]) -> None:
     A = s + e + l
 
 
-def dutch_flag_partition(pivot_index: int, A: List[int]) -> None:
-    # pivot_index = A.index(A[pivot_index])
-    # p = A[pivot_index]
+def dutch_flag_partition_sub(pivot_index: int, A: List[int]) -> None:
+    """
+    O(n^2) processing time to process each element
+    """
+    l = len(A)
+    p = A[pivot_index]
 
-    # for i in range(len(A)):
-    #     if A[i] < p and i > pivot_index:
-    #         A[i], A[pivot_index] = A[pivot_index], A[i]
-    #         pivot_index = i
-    #     if A[i] > p and i < pivot_index:
-    #         A[i], A[pivot_index] = A[pivot_index], A[i]
-    #         pivot_index = i
+    for i in range(l):
+        # Note: A updates as we go
+        for j in range(i+1, l):
+            # for all subsequent items
+            # If a smaller than p value is found
+            # then move to the front
+            # break onto next pass
+            if A[j] < p:
+                A[i], A[j] = A[j], A[i]
+                break
+
+    for i in reversed(range(l)):
+        for j in reversed(range(i)):
+            # for all previous items
+            # if a larger than p value is found
+            # then move to the end
+            # break onto next pass
+            if A[j] > p:
+                A[i], A[j] = A[j], A[i]
+                break
+
+
+def dutch_flag_partition(pivot_index: int, A: List[int]) -> None:
+    return
 
 
 @enable_executor_hook
