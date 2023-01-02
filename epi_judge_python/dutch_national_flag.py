@@ -31,6 +31,8 @@ def dutch_flag_partition_on(pivot_index: int, A: List[int]) -> None:
 def dutch_flag_partition_sub(pivot_index: int, A: List[int]) -> None:
     """
     O(n^2) processing time to process each element
+    Make one pass from the front to move smaller elements
+    Make another from the back to move larger elements
     """
     l = len(A)
     p = A[pivot_index]
