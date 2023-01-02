@@ -59,6 +59,29 @@ def dutch_flag_partition_sub(pivot_index: int, A: List[int]) -> None:
                 break
 
 
+def dutch_flag_partition_sub_single(pivot_index: int, A: List[int]) -> None:
+    """ 
+    Single pass version of _sub
+    Make location of last processed item and start from there
+    """
+    l = len(A)
+    p = A[pivot_index]
+
+    # smaller and larger mark the position of processed item
+    smaller = 0
+    larger = l - 1
+
+    for i in range(l):
+        if A[i] < p:
+            A[smaller], A[i] = A[i], A[smaller]
+            smaller += 1
+
+    for i in reversed(range(l)):
+        if A[i] > p:
+            A[i], A[larger] = A[larger], A[i]
+            larger -= 1
+
+
 def dutch_flag_partition(pivot_index: int, A: List[int]) -> None:
     return
 
